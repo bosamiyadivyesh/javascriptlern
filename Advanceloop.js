@@ -116,9 +116,14 @@ arobj.forEach((item)=>{
     console.log(item.language);
     
 })
+console.log("bhai");
 
+
+/* 
+main topic in forin loop map not working
 for (const key in map) {
     console.log("it is map ",key,"map");
     
     
 } 
+*/
