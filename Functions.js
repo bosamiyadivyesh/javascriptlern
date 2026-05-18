@@ -35,6 +35,14 @@
 // let rs=multiplication(1,7)                   we can write () inside ()this act as return
 // console.log(rs)
 
+let newtest=()=>{
+    return{
+        name:"Divyesh"
+    }
+}
+console.log(newtest());
+
+
 
 
 
