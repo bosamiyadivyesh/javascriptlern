@@ -16,7 +16,10 @@
 // console.log(result)
 
 
-//arrow function
+//arrow function  2 types implicet and explicit
+//implicet like automatic return and explicit means inside {} we use return keyword it call explicit
+//implecit means () 
+//now we can return object with out return keyword so  wecan write inside () so it will return
 
 // let multiplication=(num1,num2)=>{
     // console.log(num1*num2);
@@ -37,10 +40,14 @@
 
 let newtest=()=>{
     return{
-        name:"Divyesh"
+        name:"Divyesh"   //if i return obj in explicit method
     }
 }
 console.log(newtest());
+// ya it work 
+
+let rtobj=()=>({name:"divy"})  // if i can return object in implicet method then i use ()
+console.log(rtobj());
 
 
 

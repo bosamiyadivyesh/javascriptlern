@@ -44,7 +44,10 @@ let obj={
     
 // }
 
-// so we use forin
+// so we use forin\
+
+//forin for map
+
 
 for (const key in obj) {
   //  console.log(obj[key]);
@@ -113,3 +116,9 @@ arobj.forEach((item)=>{
     console.log(item.language);
     
 })
+
+for (const key in map) {
+    console.log("it is map ",key,"map");
+    
+    
+} 
