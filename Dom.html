@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+
+.parent {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+ul#days {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul#days li {
+    background-color: #e8e8e8;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+ul#days li button {
+    background-color: #e74c3c;
+    padding: 3px 6px;
+}
+
+ul#days li button:hover {
+    background-color: #c0392b;
+}
+</style>
+</head>
+<body>
+    <h2>add says and repalce same days to next day  </h2>
+    <div class="parent" id="parent"> 
+        days:<input name="text" id="adddays"/>
+          <button id="add" onclick="Addname()">ADD</button>
+   <ul id="days">
+    <li id="monday">Monday</li>
+    <li id="tuesday">tuesday</li>
+   
+   </ul>
+    </div>
+</body>
+<script>
+
+
+function Addname(){
+let days=document.getElementById("days")  //for add new li in last so we need 
+
+let newdays=document.getElementById("adddays").value;  //it use give unique id for newli
+
+const newli=document.createElement("li")  //crete a new li
+
+newli.setAttribute("id",newdays) //set a id for new li
+
+let valueli=document.createTextNode(`${newdays}      `) // it use give a value means some text wich show in li  similar innertext ,innetcontext 
+
+newli.appendChild(valueli) //it use apped text in element 
+ 
+
+
+days.appendChild(newli) //apend a new li in ul which name hase days frist line imp
+
+
+
+
+
+
+
+// it for deleting 
+
+let deletbutton=document.createElement("button")
+deletbutton.setAttribute("id",newdays)
+deletbutton.innerText="Delete"
+newli.appendChild(deletbutton) //it use apped text in element
+deletbutton.addEventListener("click",function(e){
+    let deleted=e.target.id
+    if(newli.id === deleted){
+        newli.remove()
+    }
+})
+}
+</script>
+
+</html>
