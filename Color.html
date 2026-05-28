@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        background-color: aqua;
+    }
+    #box{
+        width:500px;
+        height: 500px;
+        margin: 0 auto;
+        background-color:#106EBE;
+    }
+    #start{
+        float: left;
+        margin:50px;
+        padding: 50px;
+    
+    }
+    #stop{
+        float: right;
+        margin:50px;
+        padding: 50px;
+        
+    
+        }
+</style>
+</head>
+<body>
+    <div id="box">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</div>
+</body>
+<script>
+  
+      let stopin;
+
+    function colorgenratr(){
+      let letters = "0123456789ABCDEF";
+      let color = "#";
+      for(let i = 0; i < 6; i++) {
+        color +=letters[Math.floor(Math.random() * 16) ];
+      }
+      return color
+    }
+
+    function changecolor(){
+         document.body.style.backgroundColor=colorgenratr() 
+       }
+    function starts(){
+        if(!stopin){
+        stopin=setInterval(changecolor,1000);
+        }
+       
+    }
+    function stops(){
+         clearInterval(stopin)
+         stopin=null
+   
+    }
+
+    document.getElementById("start").addEventListener("click",starts);
+    document.getElementById("stop").addEventListener("click",stops);
+
+</script>
+</html>
