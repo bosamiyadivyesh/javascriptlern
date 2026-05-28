@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical Scope Example</title>
+</head>
+<body>
+
+    <button id="Orange">Orange</button>
+    <button id="Green">Green</button>
+
+</body>
+
+<script>
+
+    // Parent function
+    function handlecolor(color){
+
+        // This inner function remembers the value of `color`
+        // even after handlecolor() execution is finished.
+        // This is called Lexical Scope / Closure.
+
+        return function(){
+
+            // Inner function can access parent's variable `color`
+            // because of lexical scope
+
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    // handlecolor('orange') returns inner function
+    // That returned function remembers:
+    // color = "orange"
+
+    document.getElementById("Orange").onclick =
+        handlecolor('orange');
+
+
+    // Here returned function remembers:
+    // color = "green"
+
+    document.getElementById("Green").onclick =
+        handlecolor('green');
+
+</script>
+</html>
